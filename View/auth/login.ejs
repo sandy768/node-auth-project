@@ -1,0 +1,51 @@
+<%-include('../includes/header.ejs')%>
+<link rel="stylesheet" href="/css/authLogin.css">
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs')%>
+    <main>
+        <form action="/auth/postlogin" method="POST" autocomplete="off">
+            <div class="login">
+                <form>
+                    <img src="https://res.cloudinary.com/dejzo3x6l/image/upload/v1462601844/login%20page%20design/3.png" alt="Profile-pic">
+                    <div>
+                        <%if(errRecovery){%>
+                            <p class="text-warning"><%=errRecovery%></p>
+                        <%}%>
+                    </div>
+                    <div>
+                        <%if(updatedPassword){%>
+                            <p class="text-warning"><%=updatedPassword%></p>
+                        <%}%>
+                    </div>
+                    <div>
+                        <%if(successVerify){%>
+                            <p class="text-warning"><%=successVerify%></p>
+                        <%}%>
+                    </div>
+                    <div class="input_box">
+                        <input type="email" name="email" placeholder="Email Id">
+                    </div>
+                    <div>
+                        <%if(invalidEmail){%>
+                            <p class="text-warning"><%=invalidEmail%></p>
+                        <%}%>
+                    </div>
+                    <div class="input_box">
+                        <input type="password" name="password" placeholder="Password">
+                    </div>
+                    <div>
+                        <%if(error_passkey){%>
+                            <p class="text-warning"><%=error_passkey%></p>
+                        <%}%>
+                    </div>
+                    <input type="submit" value="Login" class="submit_btn">
+                    <br><a href="/auth/getrecovery" class="for_pass">Forgot Password</a>
+                </form>
+            </div>
+        </form>
+    </main>
+<%-include('../includes/footer.ejs')%>

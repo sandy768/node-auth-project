@@ -1,0 +1,63 @@
+<%-include('../includes/header.ejs')%>
+  <link rel="stylesheet" href="/css/authRegistration.css">
+  <title>
+    <%=title%>
+  </title>
+  </head>
+
+  <body>
+    <%-include('../includes/navbar.ejs')%>
+      <main>
+        <div class="reg">
+          <div class="wrapper">
+            <div class="title">
+              Registration Form
+            </div>
+            <form action="/auth/postreg" method="POST" autocomplete="off">
+              <div class="form">
+                <div>
+                  <%if(mailVerify){%>
+                    <p class="text-danger"><%=mailVerify%></p>
+                  <%}%>
+                </div>
+                <div>
+                  <%if(mailSuccess){%>
+                    <p class="text-danger"><%=mailSuccess%></p>
+                  <%}%>
+                </div>
+                <div>
+                  <%if(error_token){%>
+                    <p class="text-danger"><%=error_token%></p>
+                  <%}%>
+                </div>
+                <div class="inputfield">
+                  <label for="name">Full Name</label>
+                  <input type="text" class="input" name="name" id="name">
+                </div>
+                <div class="inputfield">
+                  <label for="email">Email</label>
+                  <input type="email" class="input" name="email" id="email">
+                </div>
+                <div>
+                  <%if(errorMail){%>
+                    <p class="text-danger"><%=errorMail%></p>
+                  <%}%>
+                </div>
+                <div class="inputfield">
+                  <label for="password">Password</label>
+                  <input type="password" class="input" name="password" id="password">
+                </div>
+                <div class="inputfield">
+                  <label for="cnf_pass">Confirm Password</label>
+                  <input type="password" class="input" name="cnf_pass" id="cnf_pass">
+                </div>
+                <div class="inputfield">
+                  <input type="submit" value="Register" class="btn">
+                </div>
+              </div>
+            </div>
+          </div>
+            </form>
+            
+      </main>
+      <%-include('../includes/footer.ejs')%>

@@ -1,0 +1,32 @@
+<%-include('../includes/header.ejs')%>
+    <link rel="stylesheet" href="/css/email.css">
+    <title>
+        <%=title%>
+    </title>
+    </head>
+
+    <body>
+        <%-include('../includes/navbar.ejs')%>
+            <main>
+                <div class="pass_recovery">
+                    <h2>Don't Worry!</h2>
+                    <form action="/auth/postrecovery" method="POST" autocomplete="off">
+                        <h4>
+                            Just provide your email and we can do the rest...
+                        </h4>
+                        <formgroup>
+                            <input type="text" name="email" id="email" />
+                            <label for="email"><br>Email</label>
+                            <span>enter your email</span>
+                        </formgroup>
+                        <div>
+                            <%if(invalidMail){%>
+                                <p class="text-danger"><%=invalidMail%></p>
+                            <%}%>
+                        </div>
+                        <button id="login-btn">Next</button>
+                        <p class="text-secondary pt-3">Did you remember? <a href="/auth/logindata">Sign In</a></p>
+                    </form>
+                </div>
+            </main>
+<!-- <%-include('../includes/footer.ejs')%> -->

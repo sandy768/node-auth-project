@@ -1,0 +1,28 @@
+<%-include('../includes/header.ejs')%>
+<title>
+    <%=title%>
+</title>
+</head>
+<body>
+    <%-include('../includes/navbar.ejs')%>
+    <main>
+            <h2 class="text-center tect-success mt-5 text-success fw-bold fs-2">Profile Dashboard</h2>
+            <div class="dash d-flex justify-content-center align-items-center mt-4 mb-5">
+                <div class="card mb-3" style="max-width: 700px;">
+                    <div class="row g-0">
+                      <div class="col-md-4">
+                        <img src="https://preview.keenthemes.com/metronic-v4/theme_rtl/assets/pages/media/profile/profile_user.jpg" class="img-fluid rounded-start" alt="...">
+                      </div>
+                      <div class="col-md-8">
+                        <div class="card-body bg-warning" style="height: 232px;">
+                          <h5 class="card-title text-success fw-bold fs-4 pt-4 px-3">User Name: <span class="text-dark fw-semibold"><%=data.full_name%></span></h5>
+                          <p class="card-text text-success fw-bold fs-5 px-3">Email Id: <span class="text-dark fw-semibold"><%=data.email%></span></p>
+                          <a href="/auth/logout" class="btn btn-danger mt-3 mx-4">Log Out</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+        
+    </main>
+    <%-include('../includes/footer.ejs')%>
